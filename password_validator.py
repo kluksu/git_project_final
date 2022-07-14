@@ -3,7 +3,7 @@ import re
 from termcolor import colored
 import sys
 password=""
-if(len(sys.argv)>1):
+if(len(sys.argv)>1 and sys.argv[1]!="-f" ):
     password=sys.argv[1]
 elif len(sys.argv)>2 and sys.argv[1]=="-f":
     password_file = open( sys.argv[2],"r")
