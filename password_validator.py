@@ -5,6 +5,9 @@ import sys
 password=""
 if(len(sys.argv)>1):
     password=sys.argv[1]
+elif len(sys.argv)>2 and sys.argv[1]=="-f":
+    password_file = open( sys.argv[2],"r")
+    password=password_file.read()
 regex = "^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[\w~@#$%^&*+=`|{}:;!.?\"()\[\]-]{10,}$"
 # regex="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[^\W_]{10,}$"
 speciel="^(?=.*[!@#$%^&*])"
